@@ -6,7 +6,7 @@ percent = "";
 function setup() {
     canvas = createCanvas(640,420);
     canvas.center()
-    objectDectector = ml5.objectDectector('cocossd', modelLoaded);
+    objectDetector = ml5.objectDetector('cocossd', modelLoaded);
 }
 function preload() {
     img = loadImage('bed.png');
@@ -29,7 +29,7 @@ function draw() {
 function modelLoaded() {
     console.log("model Loaded!")
     status = true;
-    objectDectector.detect(img, gotResults);
+    objectDetector.detect(img, gotResults);
 }
 function gotResults(error, results){
 if (error) {
